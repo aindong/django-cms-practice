@@ -1,31 +1,37 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags static %}
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
-        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{#        <style type="text/css">#}
+{#            .nav {#}
+{#                padding-left: 0;#}
+{#            }#}
+{#            .nav li {#}
+{#                display: inline;#}
+{#                list-style-type: none;#}
+{#                padding-right: 20px;#}
+{#            }#}
+{#            .container {#}
+{#                width: 940px;#}
+{#                margin: 0 auto#}
+{#            }#}
+{#            .content {#}
+{#                float: left;#}
+{#                width: 80%;#}
+{#            }#}
+{#            .sidebar {#}
+{#                float: left;#}
+{#                width: 20%;#}
+{#            }#}
+{#        </style>#}
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+
         {% render_block "css" %}
     </head>
     <body>
@@ -36,6 +42,17 @@
             </ul>
             {% block content %}{% endblock content %}
         </div>
+
+        <script src="//code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+
         {% render_block "js" %}
     </body>
 </html>
