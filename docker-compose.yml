@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  alleoblog:
+    env_file: .env
+    image: alleoblog:1.0
+    build: ./
+    ports:
+      - "8000:8000"
+    restart: always
+    command: >
+      bash -c "./manage.py migrate &&
+               ./manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/code

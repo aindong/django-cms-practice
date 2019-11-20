@@ -15,4 +15,4 @@ EXPOSE 8000
 
 # Migrates the database, uploads staticfiles, and runs the production server
 CMD ./manage.py migrate && \
-    gunicorn --bind 0.0.0.0:8000 --access-logfile - mysite.wsgi:application
+    gunicorn --bind 0.0.0.0:8000 --access-logfile - alleoblog.wsgi:application
